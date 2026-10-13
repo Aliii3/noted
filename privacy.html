@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy · Noted</title>
+<meta name="description" content="How Noted handles your data.">
+<meta name="theme-color" content="#EEEDEA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0A0A0A" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://noted-chat.noted-chat.workers.dev/privacy">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Privacy · Noted">
+<meta property="og:description" content="How Noted handles your data.">
+<meta property="og:image" content="https://noted-chat.noted-chat.workers.dev/og.png">
+<meta property="og:url" content="https://noted-chat.noted-chat.workers.dev/privacy">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="wordmark" href="/" aria-label="Noted home">Noted <span class="dot" aria-hidden="true"></span></a>
+    <nav aria-label="Main">
+      <a class="link" href="/privacy">Privacy</a>
+      <a class="link" href="/support">Support</a>
+      <a class="lang" href="/ar" hreflang="ar" lang="ar"><span class="ar-text">عربي</span></a>
+    </nav>
+  </div>
+</header>
+<main class="doc" id="main">
+    <h1>Privacy</h1>
+    <p class="meta">Last updated October 13, 2026</p>
+    <p>Noted is a personal planner. This page explains what it collects, why, and how to remove it.</p>
+    <h2>Microphone and voice</h2>
+    <p>When you tap the mic, your phone&#x27;s built-in speech recognition turns your voice into text. Audio is not stored by Noted. On iPhone, Apple may process speech on its servers; on Android, Google may. Replies are read aloud by your phone&#x27;s built-in voice.</p>
+    <h2>Your tasks, plans, events and habits</h2>
+    <p>Everything you add is saved on your phone. If you sign in, it&#x27;s also stored in your private space in Google Firebase (Cloud Firestore) so it syncs between your devices. Only you can read it. Guests&#x27; tasks, plans, events and habits are stored only on the phone; chat requests still go to the assistant as described below.</p>
+    <h2>Notifications</h2>
+    <p>Reminders are scheduled on your phone. To receive push notifications your phone gets a token from Firebase Cloud Messaging; it identifies the app install, not you.</p>
+    <h2>AI conversations</h2>
+    <p>When you chat, your messages, the current date and time zone and, if Cognitive Memory is on, your tasks, events and habits are sent to our server (hosted on Cloudflare) and on to Anthropic&#x27;s Claude model to work out what to do. Noted does not keep chat history on the server. Anthropic does not use this data to train its models.</p>
+    <h2>Services we use</h2>
+    <p>Google Firebase (sign-in, storage, sync, messaging), Cloudflare (hosts the server that relays AI requests and counts daily messages), Anthropic (AI replies), and Sign in with Apple or Google if you choose them. We don&#x27;t sell your data or use it for ads.</p>
+    <h2>Keeping and deleting data</h2>
+    <p>Your data is kept until you delete it. Clear On-Device Data removes the copy on this phone. Delete Account in Settings permanently deletes your account and all synced data.</p>
+    <h2>Contact</h2>
+    <p>Questions about your data? Email <a href="mailto:ali@aysolution.co">ali@aysolution.co</a>.</p>
+</main>
+<footer>
+  <div class="wrap">
+    <a class="wordmark" href="/">Noted <span class="dot" aria-hidden="true"></span></a>
+    <nav aria-label="Footer">
+      <a href="/">Home</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/support">Support</a>
+    </nav>
+    <span class="copy">© 2026 Ali Yasser</span>
+  </div>
+</footer>
+</body>
+</html>
