@@ -34,8 +34,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0A0A0A;
+  :root:not([data-theme="light"]) { --bg: #0A0A0A;
     --surface: #161615;
     --surface-alt: #1E1E1C;
     --ink: #F2F1EE;
@@ -46,9 +45,20 @@
     --accent-text: #EA5E45;
     --on-ink: #111111;
     --grain: 0.12;
-    --shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
-  }
+    --shadow: 0 30px 80px rgba(0, 0, 0, 0.6); }
 }
+:root[data-theme="dark"] { --bg: #0A0A0A;
+    --surface: #161615;
+    --surface-alt: #1E1E1C;
+    --ink: #F2F1EE;
+    --ink-soft: #A3A29E;
+    --muted: #55544F;
+    --line: #2A2A28;
+    --accent-soft: #3A1E18;
+    --accent-text: #EA5E45;
+    --on-ink: #111111;
+    --grain: 0.12;
+    --shadow: 0 30px 80px rgba(0, 0, 0, 0.6); }
 
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
@@ -78,7 +88,10 @@ body::before {
   mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
 }
-@media (prefers-color-scheme: dark) { body::before { mix-blend-mode: screen; } }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) body::before { mix-blend-mode: screen; }
+}
+:root[data-theme="dark"] body::before { mix-blend-mode: screen; }
 
 [lang="ar"] body { font-family: var(--arabic); }
 [lang="ar"] h1, [lang="ar"] h2, [lang="ar"] h3, [lang="ar"] .faq summary, [lang="ar"] .stats strong { font-family: var(--arabic-display); }
@@ -157,7 +170,10 @@ img { max-width: 100%; height: auto; display: block; }
   position: absolute; width: 290px; border-radius: 46px; overflow: hidden;
   border: 9px solid #111; background: #111; box-shadow: var(--shadow);
 }
-@media (prefers-color-scheme: dark) { .phone { border-color: #2a2a28; } }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .phone { border-color: #2a2a28; }
+}
+:root[data-theme="dark"] .phone { border-color: #2a2a28; }
 .phone img { width: 100%; height: auto; }
 .stage .front { inset-inline-start: 50%; top: 0; transform: translateX(-38%); z-index: 2; width: 300px; }
 .stage .back { inset-inline-start: 50%; top: 70px; transform: translateX(-96%) rotate(-6deg); opacity: .96; }
@@ -229,16 +245,22 @@ h2 .soft { color: var(--ink-soft); white-space: nowrap; }
   margin: auto auto 0; width: min(300px, 80%); border-radius: 38px 38px 0 0; overflow: hidden;
   border: 8px solid #111; border-bottom: 0; height: 360px; box-shadow: var(--shadow);
 }
-@media (prefers-color-scheme: dark) { .card.shot .phone-crop { border-color: #2a2a28; } }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .card.shot .phone-crop { border-color: #2a2a28; }
+}
+:root[data-theme="dark"] .card.shot .phone-crop { border-color: #2a2a28; }
 .card.shot .phone-crop img { width: 100%; }
 .card.dark { background: #0F0F0E; color: #F2F1EE; }
 .card.dark p { color: #A3A29E; }
 .card.dark .icon { background: #1E1E1C; }
 @media (prefers-color-scheme: dark) {
-  .card.dark { background: #F2F1EE; color: #111; }
-  .card.dark p { color: #6B6A66; }
-  .card.dark .icon { background: #E2E0DC; }
+  :root:not([data-theme="light"]) .card.dark { background: #F2F1EE; color: #111; }
+  :root:not([data-theme="light"]) .card.dark p { color: #6B6A66; }
+  :root:not([data-theme="light"]) .card.dark .icon { background: #E2E0DC; }
 }
+:root[data-theme="dark"] .card.dark { background: #F2F1EE; color: #111; }
+:root[data-theme="dark"] .card.dark p { color: #6B6A66; }
+:root[data-theme="dark"] .card.dark .icon { background: #E2E0DC; }
 
 .bars { display: flex; align-items: flex-end; gap: 10px; height: 120px; margin-top: 28px; }
 .bars div { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; height: 100%; justify-content: flex-end; }
@@ -361,3 +383,25 @@ footer nav a { padding-block: 10px; }
 .type-bar { margin-top: 18px; display: flex; align-items: center; gap: 10px; padding: 6px 6px 6px 16px; border-radius: 999px; background: var(--surface-alt); border: 1.2px solid var(--line); color: var(--ink-soft); font-size: 15px; }
 .type-bar .send { margin-inline-start: auto; width: 34px; height: 34px; border-radius: 50%; background: var(--ink); display: grid; place-items: center; flex: none; }
 .type-bar .send svg { width: 16px; height: 16px; color: var(--on-ink); }
+
+/* Theme switch in the header: Light / Dark, remembered per visitor. */
+.theme { width: 44px; height: 44px; border-radius: 50%; border: 1.2px solid var(--line); background: transparent; color: var(--ink); display: inline-grid; place-items: center; cursor: pointer; padding: 0; }
+.theme:hover { border-color: var(--ink-soft); }
+.theme svg { width: 18px; height: 18px; }
+.theme .moon { display: none; }
+:root[data-theme="dark"] .theme .sun { display: none; }
+:root[data-theme="dark"] .theme .moon { display: block; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme .sun { display: none; }
+  :root:not([data-theme="light"]) .theme .moon { display: block; }
+}
+/* The hero phone shows the app in the matching theme. */
+.only-dark { display: none !important; }
+:root[data-theme="dark"] .only-dark { display: block !important; }
+:root[data-theme="dark"] .only-light { display: none !important; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .only-dark { display: block !important; }
+  :root:not([data-theme="light"]) .only-light { display: none !important; }
+}
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
