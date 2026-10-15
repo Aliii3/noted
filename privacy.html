@@ -35,7 +35,7 @@
     <p class="meta">Last updated October 13, 2026</p>
     <p>Noted is a personal planner. This page explains what it collects, why, and how to remove it.</p>
     <h2>Microphone and voice</h2>
-    <p>When you tap the mic, your phone&#x27;s built-in speech recognition turns your voice into text. Audio is not stored by Noted. On iPhone, Apple may process speech on its servers; on Android, Google may. Replies are read aloud by your phone&#x27;s built-in voice.</p>
+    <p>When you tap the mic with the voice language set to Auto (the default), your recording is sent to our server and transcribed by a speech model on Cloudflare (Whisper), which also detects the language. The audio is used only for that and isn&#x27;t stored. If you choose English or Arabic in Settings, your phone&#x27;s built-in speech recognition is used instead; on iPhone, Apple may process speech on its servers. Replies are read aloud by your phone&#x27;s built-in voice.</p>
     <h2>Your tasks, plans, events and habits</h2>
     <p>Everything you add is saved on your phone. If you sign in, it&#x27;s also stored in your private space in Google Firebase (Cloud Firestore) so it syncs between your devices. Only you can read it. Guests&#x27; tasks, plans, events and habits are stored only on the phone; chat requests still go to the assistant as described below.</p>
     <h2>Notifications</h2>
@@ -43,7 +43,7 @@
     <h2>AI conversations</h2>
     <p>When you chat, your messages, the current date and time zone and, if Cognitive Memory is on, your tasks, events and habits are sent to our server (hosted on Cloudflare) and on to Anthropic&#x27;s Claude model to work out what to do. Noted does not keep chat history on the server. Anthropic does not use this data to train its models.</p>
     <h2>Services we use</h2>
-    <p>Google Firebase (sign-in, storage, sync, messaging), Cloudflare (hosts the server that relays AI requests and counts daily messages), Anthropic (AI replies), and Sign in with Apple or Google if you choose them. We don&#x27;t sell your data or use it for ads.</p>
+    <p>Google Firebase (sign-in, storage, sync, messaging), Cloudflare (hosts the server that relays AI requests, transcribes voice in Auto mode and counts daily messages), Anthropic (AI replies), and Sign in with Apple or Google if you choose them. We don&#x27;t sell your data or use it for ads.</p>
     <h2>Keeping and deleting data</h2>
     <p>Your data is kept until you delete it. Clear On-Device Data removes the copy on this phone. Delete Account in Settings permanently deletes your account and all synced data.</p>
     <h2>Contact</h2>

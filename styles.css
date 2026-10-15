@@ -323,3 +323,41 @@ footer nav a { padding-block: 10px; }
 [lang="ar"] h1, [lang="ar"] h2, [lang="ar"] h3, [lang="ar"] .card h3, [lang="ar"] .promise h3,
 [lang="ar"] .faq summary, [lang="ar"] .stats strong, [lang="ar"] .hero h1 { letter-spacing: 0; }
 [lang="ar"] .receipt .when, [lang="ar"] .bars b { font-family: var(--arabic); letter-spacing: 0; font-size: 13px; }
+
+/* ── Widgets showcase ──────────────────────────────── */
+.widgets { display: flex; flex-wrap: wrap; gap: 18px; align-items: flex-start; margin-top: 26px; }
+.w { border-radius: 24px; padding: 16px; background: var(--bg); color: var(--ink); box-shadow: 0 1px 0 var(--line) inset, 0 12px 30px rgba(17,17,17,.10); }
+.w-small { width: 170px; height: 170px; display: flex; flex-direction: column; }
+.w-medium { width: 360px; max-width: 100%; height: 170px; display: flex; flex-direction: column; }
+.w-head { display: flex; align-items: baseline; gap: 6px; font: 700 22px/1 var(--display); letter-spacing: -0.02em; }
+.w-head .dot { width: 7px; height: 7px; }
+.w-head small { margin-inline-start: auto; font: 500 12px/1 var(--mono); color: var(--ink-soft); }
+.w-row { display: flex; align-items: center; gap: 8px; margin-top: 10px; font-weight: 600; font-size: 13px; white-space: nowrap; overflow: hidden; }
+.w-row i { width: 6px; height: 6px; border-radius: 50%; background: var(--ink); flex: none; margin: 0 4px; }
+.w-row b { width: 13px; height: 13px; border-radius: 50%; border: 1.5px solid var(--ink); flex: none; }
+.w-row span { overflow: hidden; text-overflow: ellipsis; }
+.w-row em { margin-inline-start: auto; font: normal 11px/1 var(--mono); color: var(--ink-soft); }
+.w-rings { display: flex; justify-content: space-between; margin-top: auto; }
+.w-rings div { display: flex; flex-direction: column; align-items: center; gap: 5px; font-size: 11px; font-weight: 600; }
+.w-rings .ring { width: 52px; height: 52px; font-size: 21px; }
+.w-rings .ring::before { inset: 4px; background: var(--bg); }
+.w-mic { background: var(--bg); justify-content: space-between; }
+.w-mic .mic { width: 64px; height: 64px; border-radius: 50%; background: var(--accent); align-self: center; display: grid; place-items: center; }
+.w-mic .mic svg { width: 28px; height: 28px; color: #fff; }
+.w-mic small { font-size: 12px; color: var(--ink-soft); }
+.w-lock { width: 220px; padding: 12px 14px; border-radius: 18px; background: linear-gradient(135deg, #3b3a4a, #1f2a3a); color: #fff; box-shadow: none; }
+.w-lock .cap { font: 600 10px/1 var(--body); letter-spacing: .8px; opacity: .75; }
+.w-lock strong { display: block; font: 700 15px/1.2 var(--body); margin-top: 4px; }
+.w-lock span { font-size: 12px; opacity: .8; }
+.widgets .caption { flex-basis: 100%; font: 400 12px/1.4 var(--mono); color: var(--ink-soft); }
+[lang="ar"] .widgets .caption { font-family: var(--arabic); font-size: 13px; }
+@media (max-width: 420px) { .w-medium { width: 100%; } .w-rings .ring { width: 46px; height: 46px; font-size: 19px; } }
+
+/* Roast line sample, like Home's coral note. */
+.roast-quote { margin-top: 16px; padding: 14px 16px; border-radius: 16px; background: var(--accent-soft); color: var(--accent-text); font: 600 17px/1.35 var(--display); }
+[lang="ar"] .roast-quote { font-family: var(--arabic-display); }
+
+/* Quick-add bar sample. */
+.type-bar { margin-top: 18px; display: flex; align-items: center; gap: 10px; padding: 6px 6px 6px 16px; border-radius: 999px; background: var(--surface-alt); border: 1.2px solid var(--line); color: var(--ink-soft); font-size: 15px; }
+.type-bar .send { margin-inline-start: auto; width: 34px; height: 34px; border-radius: 50%; background: var(--ink); display: grid; place-items: center; flex: none; }
+.type-bar .send svg { width: 16px; height: 16px; color: var(--on-ink); }
