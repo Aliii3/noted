@@ -293,7 +293,7 @@ h2 .soft { color: var(--ink-soft); white-space: nowrap; }
 }
 
 /* Privacy */
-.promises { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.promises { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 .promise { border-top: 1.5px solid var(--ink); padding-top: 18px; }
 .promise h3 { font: 700 21px/1.2 var(--display); letter-spacing: -0.01em; margin: 0 0 8px; }
 [lang="ar"] .promise h3 { line-height: 1.4; }
@@ -405,3 +405,55 @@ footer nav a { padding-block: 10px; }
 }
 :root[data-theme="light"] { color-scheme: light; }
 :root[data-theme="dark"] { color-scheme: dark; }
+
+/* ── 1.3: Apple Watch and Mac, morning summary, plans ── */
+a.pill { text-decoration: none; }
+a.pill:hover { color: var(--ink); border-color: var(--ink-soft); }
+.devices { display: grid; grid-template-columns: 1fr 2fr; gap: 16px; }
+.device-card { background: var(--surface); border-radius: 28px; padding: 30px; display: flex; flex-direction: column; }
+.device-card h3 { font: 700 26px/1.12 var(--display); letter-spacing: -0.02em; margin: 0 0 14px; }
+[lang="ar"] .device-card h3 { line-height: 1.35; }
+.soon { align-self: flex-start; font: 400 12px/1 var(--mono); letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent-text); background: var(--accent-soft); border-radius: 999px; padding: 7px 11px; margin-bottom: 18px; }
+[lang="ar"] .soon { font-family: var(--arabic); letter-spacing: 0; font-size: 13px; }
+.ticks { list-style: none; margin: 0 0 28px; padding: 0; color: var(--ink-soft); }
+.ticks li { position: relative; padding-inline-start: 20px; margin-bottom: 8px; }
+.ticks li::before { content: ""; position: absolute; inset-inline-start: 0; top: .62em; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+.ticks strong { color: var(--ink); font-weight: 600; }
+.device-card figure { margin: auto 0 0; display: flex; justify-content: center; align-items: flex-end; }
+.device-card figure img { width: 100%; height: auto; }
+.device-card.watch figure img { max-width: 230px; }
+.device-card.mac figure img { max-width: 660px; }
+.trademark { color: var(--ink-soft); font-size: 13px; margin: 18px 0 0; }
+@media (max-width: 900px) { .devices { grid-template-columns: 1fr; } }
+
+.notif { display: flex; gap: 14px; align-items: flex-start; background: var(--bg); border-radius: 22px; padding: 16px 18px; margin-top: 24px; box-shadow: 0 12px 30px rgba(17, 17, 17, .08); }
+.notif .app { flex: none; width: 40px; height: 40px; border-radius: 10px; background: #111; color: #fff; display: grid; place-items: center; font: 700 22px/1 var(--display); }
+.notif .app i { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); margin: 10px 0 0 1px; }
+.notif .body { flex: 1; min-width: 0; }
+.notif .head { display: flex; justify-content: space-between; font: 600 13px/1.3 var(--body); color: var(--ink-soft); }
+.notif strong { display: block; font: 600 16px/1.3 var(--body); margin-top: 2px; }
+.notif span.text { display: block; font-size: 15px; color: var(--ink-soft); }
+
+.plans { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 920px; }
+.plan { background: var(--surface); border-radius: 28px; padding: 30px; display: flex; flex-direction: column; }
+.plan h3 { font: 700 26px/1.12 var(--display); letter-spacing: -0.02em; margin: 0 0 6px; }
+.plan .price { font: 400 13px/1.4 var(--mono); color: var(--ink-soft); margin: 0 0 22px; }
+[lang="ar"] .plan .price { font-family: var(--arabic); font-size: 14px; }
+.plan .ticks { margin-bottom: 0; }
+.plan.premium { background: #0F0F0E; color: #F2F1EE; }
+.plan.premium .ticks, .plan.premium .price { color: #A3A29E; }
+.plan.premium .ticks strong { color: #F2F1EE; }
+.plan .invite { margin: 22px 0 0; padding-top: 18px; border-top: 1px solid #2A2A28; color: #A3A29E; font-size: 15px; }
+.plan .invite strong { color: #F2F1EE; font-weight: 600; }
+@media (max-width: 760px) { .plans { grid-template-columns: 1fr; } }
+/* Premium flips to light on the dark theme, like .card.dark. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .plan.premium { background: #F2F1EE; color: #111; }
+  :root:not([data-theme="light"]) .plan.premium .ticks, :root:not([data-theme="light"]) .plan.premium .price, :root:not([data-theme="light"]) .plan .invite { color: #6B6A66; }
+  :root:not([data-theme="light"]) .plan.premium .ticks strong, :root:not([data-theme="light"]) .plan .invite strong { color: #111; }
+  :root:not([data-theme="light"]) .plan .invite { border-top-color: #DCDAD4; }
+}
+:root[data-theme="dark"] .plan.premium { background: #F2F1EE; color: #111; }
+:root[data-theme="dark"] .plan.premium .ticks, :root[data-theme="dark"] .plan.premium .price, :root[data-theme="dark"] .plan .invite { color: #6B6A66; }
+:root[data-theme="dark"] .plan.premium .ticks strong, :root[data-theme="dark"] .plan .invite strong { color: #111; }
+:root[data-theme="dark"] .plan .invite { border-top-color: #DCDAD4; }
