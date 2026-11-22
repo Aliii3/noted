@@ -457,3 +457,6 @@ a.pill:hover { color: var(--ink); border-color: var(--ink-soft); }
 :root[data-theme="dark"] .plan.premium .ticks, :root[data-theme="dark"] .plan.premium .price, :root[data-theme="dark"] .plan .invite { color: #6B6A66; }
 :root[data-theme="dark"] .plan.premium .ticks strong, :root[data-theme="dark"] .plan .invite strong { color: #111; }
 :root[data-theme="dark"] .plan .invite { border-top-color: #DCDAD4; }
+.device-card .get { margin: -12px 0 24px; }
+.device-card p.get { color: var(--ink-soft); font-size: 15px; }
+.device-card a.get { align-self: flex-start; }
