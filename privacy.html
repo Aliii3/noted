@@ -38,7 +38,7 @@
 </header>
 <main class="doc" id="main">
     <h1>Privacy</h1>
-    <p class="meta">Last updated November 14, 2026</p>
+    <p class="meta">Last updated November 26, 2026</p>
     <p>Noted is a personal planner. This page explains what it collects, why, and how to remove it.</p>
     <h2>Microphone and voice</h2>
     <p>When you tap the mic with the voice language set to Auto (the default), your recording is sent to our server and transcribed by a speech model on Cloudflare (Whisper), which also detects the language. The audio is used only for that and isn&#x27;t stored. While you talk, your iPhone&#x27;s own speech recognition also shows a preview of your words; Apple may process that speech on its servers when the iPhone can&#x27;t do it on the device. If you choose English or Arabic in Settings, your phone&#x27;s built-in speech recognition is used instead; on iPhone, Apple may process speech on its servers. Replies are read aloud by your phone&#x27;s built-in voice.</p>
@@ -47,11 +47,11 @@
     <h2>Notifications</h2>
     <p>Reminders are scheduled on your phone. To receive push notifications your phone gets a token from Firebase Cloud Messaging; it identifies the app install, not you.</p>
     <h2>AI conversations</h2>
-    <p>When you chat, your messages, the current date and time zone and, if Cognitive Memory is on, your tasks, events and habits are sent to our server (hosted on Cloudflare) and on to Anthropic&#x27;s Claude model to work out what to do. Noted does not keep chat history on the server; it logs only each request&#x27;s size and cost, without its content. Anthropic does not use this data to train its models.</p>
+    <p>When you chat, your messages, the current date and time zone and, if Cognitive Memory is on, your tasks, events and habits are sent to our server (hosted on Cloudflare) and on to Anthropic&#x27;s Claude model to work out what to do. If you send a photo of your notes, it goes the same way so Claude can read it, and it isn&#x27;t stored on our server. Noted does not keep chat history on the server; it logs only each request&#x27;s size and cost, without its content. Anthropic does not use this data to train its models.</p>
     <h2>Usage analytics</h2>
     <p>Noted uses Google Analytics for Firebase to count events such as opening the app, adding a plan or correcting one, so we can see what works and fix what doesn&#x27;t. These events are tied to a random ID for this install of the app, not your name or email, and never include what you say or type. They aren&#x27;t used for ads or tracking.</p>
     <h2>Services we use</h2>
-    <p>Google Firebase (sign-in, storage, sync, messaging, usage analytics), Cloudflare (hosts the server that relays AI requests, transcribes voice in Auto mode and counts daily messages), Anthropic (AI replies), RevenueCat (keeps track of your Premium subscription; it sees your account ID and purchases, not your tasks), and Sign in with Apple or Google if you choose them. We don&#x27;t sell your data or use it for ads.</p>
+    <p>Google Firebase (sign-in, storage, sync, messaging, usage analytics), Cloudflare (hosts the server that relays AI requests, transcribes voice in Auto mode and counts daily messages), Anthropic (AI replies and reading photos you send), RevenueCat (keeps track of your Premium subscription; it sees your account ID and purchases, not your tasks), and Sign in with Apple or Google if you choose them. We don&#x27;t sell your data or use it for ads.</p>
     <h2>Keeping and deleting data</h2>
     <p>Your data is kept until you delete it. Clear On-Device Data removes the copy on this phone. Delete Account in Settings permanently deletes your account, all synced data, and the message counter, request log, invite code and free-trial dates our server keeps for your account. So the free Premium days are given once per phone, the server also keeps a one-way hash of a random ID stored on this phone; it isn&#x27;t linked to your account and stays after deletion.</p>
     <h2>Contact</h2>

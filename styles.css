@@ -423,6 +423,7 @@ a.pill:hover { color: var(--ink); border-color: var(--ink-soft); }
 .device-card figure img { width: 100%; height: auto; }
 .device-card.watch figure img { max-width: 230px; }
 .device-card.mac figure img { max-width: 660px; }
+.device-card.carplay { grid-column: 1 / -1; }
 .trademark { color: var(--ink-soft); font-size: 13px; margin: 18px 0 0; }
 @media (max-width: 900px) { .devices { grid-template-columns: 1fr; } }
 
